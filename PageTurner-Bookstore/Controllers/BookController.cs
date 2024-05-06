@@ -1,20 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PageTurner_Bookstore.Models;
+using PageTurner_Bookstore.Repository;
 
 namespace PageTurner_Bookstore.Controllers
 {
     public class BookController : Controller
     {
-        public string GetAllBooks()
+        private readonly BookRepository _bookRepository=null;
+
+            public BookController()
+            {
+               _bookRepository = new BookRepository();
+            }
+        public ViewResult GetAllBooks()
         {
-            return "All books";
+            var data= _bookRepository.GetAllBooks();
+            return View();
         }
-        public string GetBook(int id)
+        public BookModel GetBook(int id)
         {
-            return $"book with id ={id}";
+            return _bookRepository.GetBookById(id) ;
         }
-        public string SearchBook(string bookName, string authorName)
+        public List<BookModel> SearchBook(string bookName, string authorName)
         {
-            return $"Book with name={bookName} &Author={authorName}";
+            return _bookRepository.SearchBook(bookName, authorName) ;
         }
     }
 }
