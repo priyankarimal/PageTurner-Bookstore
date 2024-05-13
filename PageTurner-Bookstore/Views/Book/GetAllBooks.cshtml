@@ -1,0 +1,25 @@
+﻿@using PageTurner_Bookstore.Models;
+@model IEnumerable<BookModel>
+@{
+    Layout = "_Layout";
+}
+    <div class="container">
+    <h3 class="display-4"> All Books</h3>
+        <div class="row">
+
+            @foreach(var book in Model)
+            {
+            <div class="col-md-4">
+                <div class="card mb-5" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Description</p>
+                        <div class="btn-group"><a href="/book/getbook/@book.Id" class="btn btn-sm btn-outline-secondary">View Details</a></div>
+                        <small class=" author text-muted">@book.Author</small>
+                    </div>
+                </div>
+            </div>
+            }
+         </div> 
+         </div>
