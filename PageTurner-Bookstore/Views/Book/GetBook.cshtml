@@ -1,8 +1,8 @@
-﻿@using PageTurner_Bookstore.Models;
-@model BookModel
-@{
-    Layout = "_Layout";
+﻿@{
+    ViewData["Title"] = "Book Details"+Model.Title;
 }
+@model BookModel
+
 
 <div class="container">
     <h3 class="display-4"> Book details</h3>
@@ -75,7 +75,7 @@
     </div>
     
     <div class="py-5 bg-light">
-            <h3 class="h3"></h3>
+        <h3 class="h3">Similar Books</h3>
             <div class="row">
 
             @for(int i=0; i<5; i++)

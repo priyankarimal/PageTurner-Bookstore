@@ -7,4 +7,8 @@
     <RootNamespace>PageTurner_Bookstore</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
